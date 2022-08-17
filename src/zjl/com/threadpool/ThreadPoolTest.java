@@ -11,8 +11,8 @@ public class ThreadPoolTest {
         if (threadPoolExecutor == null) {
             synchronized (ThreadPoolTest.class){
                 if (threadPoolExecutor == null) {
-                    threadPoolExecutor = new ThreadPoolExecutor(4, 8, 50, TimeUnit.SECONDS,
-                            new LinkedBlockingDeque<>(10), new ThreadFactory() {
+                    threadPoolExecutor = new ThreadPoolExecutor(3, 4, 10, TimeUnit.SECONDS,
+                            new LinkedBlockingDeque<>(5), new ThreadFactory() {
                         @Override
                         public Thread newThread(Runnable r) {
                             return new Thread(r);
