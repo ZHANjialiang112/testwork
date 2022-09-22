@@ -14,6 +14,7 @@ public class testJackson {
     public static List<Person> persons = new ArrayList<>();
     public static List<String> names = new ArrayList<>();
     public static void main(String[] args) {
+        Test.mapMathTest0();
         names.add("小明");
         names.add("小李李");
         names.add("小王小王");
@@ -35,9 +36,10 @@ public class testJackson {
             ps.setSkillList(skill);
             persons.add(ps);
         });
-
-        showPerson(persons);
-        showMapPerson(persons);
+        String list = String.join("-", names);
+        System.out.println(list);
+//        showPerson(persons);
+//        showMapPerson(persons);
     }
 
     public static <E> void show(Collection<E> E) {
